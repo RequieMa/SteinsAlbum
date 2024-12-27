@@ -46,7 +46,7 @@ SteinsAlbum/
 │   └── models/               # Data models
 │       └── ml_inference_model.dart
 ├── src/
-│   ���── ios/
+│   ├─── ios/
 │       ├── CoreMLModels/     # CoreML model files
 │       └── swift/            # Swift bridge code
 └── model_conversion/         # Model conversion tools
