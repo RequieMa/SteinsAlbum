@@ -8,11 +8,13 @@ on:
 
 jobs:
   test:
-    name: Flutter Tests
+    name: Flutter Tests & Analysis
     runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for better relevancy of analysis
       
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -40,18 +42,18 @@ jobs:
           file: coverage/lcov.info
           fail_ci_if_error: true
 
-  codeclimate:
-    name: Code Climate Analysis
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Code Climate Coverage Action
-        uses: paambaati/codeclimate-action@v5.0.0
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          coverageCommand: flutter test --coverage
-          coverageLocations: coverage/lcov.info:lcov
-          debug: true 
+          args: >
+            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+            -Dsonar.sources=lib
+            -Dsonar.tests=test
+            -Dsonar.dart.coverage.reportPath=coverage/lcov.info
+            -Dsonar.coverage.exclusions=**/*.g.dart,**/*.freezed.dart,lib/generated/**/*
+            -Dsonar.test.inclusions=test/**/*_test.dart
+            -Dsonar.exclusions=**/*.g.dart,**/*.freezed.dart,lib/generated/**/*,test/**/* 

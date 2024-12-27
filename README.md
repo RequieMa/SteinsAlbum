@@ -1,9 +1,11 @@
 # SteinsAlbum
 
-[![CI/CD](https://github.com/[YOUR_USERNAME]/SteinsAlbum/actions/workflows/ci.yml/badge.svg)](https://github.com/[YOUR_USERNAME]/SteinsAlbum/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/[YOUR_USERNAME]/SteinsAlbum/branch/master/graph/badge.svg)](https://codecov.io/gh/[YOUR_USERNAME]/SteinsAlbum)
-[![Maintainability](https://api.codeclimate.com/v1/badges/[BADGE_ID]/maintainability)](https://codeclimate.com/github/[YOUR_USERNAME]/SteinsAlbum/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/[BADGE_ID]/test_coverage)](https://codeclimate.com/github/[YOUR_USERNAME]/SteinsAlbum/test_coverage)
+[![CI/CD](https://github.com/RequieMa/SteinsAlbum/actions/workflows/ci.yml/badge.svg)](https://github.com/RequieMa/SteinsAlbum/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/RequieMa/SteinsAlbum/branch/master/graph/badge.svg)](https://codecov.io/gh/RequieMa/SteinsAlbum)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
 
 A privacy-focused photo album management app that uses CoreML for local inference to categorize photos into scenes, selfies, and more.
 
@@ -44,7 +46,7 @@ SteinsAlbum/
 │   └── models/               # Data models
 │       └── ml_inference_model.dart
 ├── src/
-│   └── ios/
+│   ���── ios/
 │       ├── CoreMLModels/     # CoreML model files
 │       └── swift/            # Swift bridge code
 └── model_conversion/         # Model conversion tools
