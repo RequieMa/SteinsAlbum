@@ -1,4 +1,9 @@
-# SteinsAlbum - iOS Photo Album Management App
+# SteinsAlbum
+
+[![CI/CD](https://github.com/[YOUR_USERNAME]/SteinsAlbum/actions/workflows/ci.yml/badge.svg)](https://github.com/[YOUR_USERNAME]/SteinsAlbum/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/[YOUR_USERNAME]/SteinsAlbum/branch/master/graph/badge.svg)](https://codecov.io/gh/[YOUR_USERNAME]/SteinsAlbum)
+[![Maintainability](https://api.codeclimate.com/v1/badges/[BADGE_ID]/maintainability)](https://codeclimate.com/github/[YOUR_USERNAME]/SteinsAlbum/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/[BADGE_ID]/test_coverage)](https://codeclimate.com/github/[YOUR_USERNAME]/SteinsAlbum/test_coverage)
 
 A privacy-focused photo album management app that uses CoreML for local inference to categorize photos into scenes, selfies, and more.
 
@@ -6,9 +11,9 @@ A privacy-focused photo album management app that uses CoreML for local inferenc
 
 - **Privacy-First Design**: All processing happens locally on your device
 - **Smart Categorization**:
-  - Scene detection and categorization
+  - Scene detection and categorization (nature, urban, indoor, etc.)
   - Selfie detection
-  - Content filtering (memes, 18+)
+  - Content organization (memes, artwork, screenshots, etc.)
 - **Location Features**:
   - Map view for geotagged photos
   - Cluster photos by location

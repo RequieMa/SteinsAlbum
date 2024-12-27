@@ -21,24 +21,28 @@ class CategoryGrid extends StatelessWidget {
         'icon': Icons.landscape,
         'color': Colors.blue,
         'type': ModelType.scene,
+        'subtitle': 'Nature, Urban, Indoor',
       },
       {
         'title': 'Selfies',
         'icon': Icons.face,
         'color': Colors.green,
         'type': ModelType.selfie,
+        'subtitle': 'Portrait photos',
       },
       {
         'title': 'Content',
-        'icon': Icons.image,
+        'icon': Icons.category,
         'color': Colors.orange,
         'type': ModelType.content,
+        'subtitle': 'Memes, Screenshots, Art',
       },
       {
         'title': 'Map View',
         'icon': Icons.map,
         'color': Colors.purple,
         'type': null,
+        'subtitle': 'Photos by location',
       },
     ];
 
@@ -91,24 +95,36 @@ class CategoryGrid extends StatelessWidget {
               ],
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                category['icon'],
-                size: 40.0,
-                color: Colors.white,
-              ),
-              const SizedBox(height: 8.0),
-              Text(
-                category['title'],
-                style: const TextStyle(
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  category['icon'],
+                  size: 32.0,
                   color: Colors.white,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
                 ),
-              ),
-            ],
+                const SizedBox(height: 8.0),
+                Text(
+                  category['title'],
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4.0),
+                Text(
+                  category['subtitle'],
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 12.0,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
         ),
       ),

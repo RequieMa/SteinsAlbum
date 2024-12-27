@@ -6,39 +6,64 @@ enum ModelType {
   content
 }
 
+enum ContentCategory {
+  meme,
+  screenshot,
+  artwork,
+  other
+}
+
 class MLInferenceResult {
   final String label;
   final double confidence;
+  final ContentCategory? contentCategory;
 
   MLInferenceResult({
     required this.label,
     required this.confidence,
+    this.contentCategory,
   });
 
   factory MLInferenceResult.fromMap(Map<String, dynamic> map) {
     return MLInferenceResult(
       label: map['label'] as String,
       confidence: map['confidence'] as double,
+      contentCategory: map['contentCategory'] != null 
+          ? ContentCategory.values.firstWhere(
+              (e) => e.toString() == 'ContentCategory.${map['contentCategory']}',
+              orElse: () => ContentCategory.other,
+            )
+          : null,
     );
   }
 }
 
 class MLInferenceModel {
-  static const _channel = MethodChannel('steins_album/ml_inference');
-
+  // Mock implementation for Windows testing
   Future<MLInferenceResult> classifyImage({
     required String imagePath,
     required ModelType modelType,
   }) async {
-    try {
-      final result = await _channel.invokeMethod('classifyImage', {
-        'imagePath': imagePath,
-        'modelType': modelType.toString().split('.').last,
-      });
+    // Simulate processing delay
+    await Future.delayed(const Duration(milliseconds: 500));
 
-      return MLInferenceResult.fromMap(Map<String, dynamic>.from(result));
-    } on PlatformException catch (e) {
-      throw Exception('Failed to classify image: ${e.message}');
+    switch (modelType) {
+      case ModelType.scene:
+        return MLInferenceResult(
+          label: 'nature',
+          confidence: 0.95,
+        );
+      case ModelType.selfie:
+        return MLInferenceResult(
+          label: 'selfie',
+          confidence: 0.8,
+        );
+      case ModelType.content:
+        return MLInferenceResult(
+          label: 'meme',
+          confidence: 0.9,
+          contentCategory: ContentCategory.meme,
+        );
     }
   }
 
@@ -58,11 +83,11 @@ class MLInferenceModel {
     return result.label;
   }
 
-  Future<bool> isInappropriateContent(String imagePath) async {
+  Future<ContentCategory> getContentCategory(String imagePath) async {
     final result = await classifyImage(
       imagePath: imagePath,
       modelType: ModelType.content,
     );
-    return result.label == '18+' && result.confidence > 0.8;
+    return result.contentCategory ?? ContentCategory.other;
   }
 } 
