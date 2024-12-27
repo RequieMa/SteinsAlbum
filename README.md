@@ -2,10 +2,10 @@
 
 [![CI/CD](https://github.com/RequieMa/SteinsAlbum/actions/workflows/ci.yml/badge.svg)](https://github.com/RequieMa/SteinsAlbum/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/RequieMa/SteinsAlbum/branch/master/graph/badge.svg)](https://codecov.io/gh/RequieMa/SteinsAlbum)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=[YOUR_PROJECT_KEY]&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=[YOUR_PROJECT_KEY])
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=RequieMa_SteinsAlbum&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=RequieMa_SteinsAlbum)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=RequieMa_SteinsAlbum&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=RequieMa_SteinsAlbum)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=RequieMa_SteinsAlbum&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=RequieMa_SteinsAlbum)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=RequieMa_SteinsAlbum&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=RequieMa_SteinsAlbum)
 
 A privacy-focused photo album management app that uses CoreML for local inference to categorize photos into scenes, selfies, and more.
 
