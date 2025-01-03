@@ -1,0 +1,15 @@
+# Python standard library supplements
+setuptools>=65.5.1
+wheel>=0.38.4
+
+# Base requirements
+# numpy>=1.21.0,<1.26.0  # More compatible version range
+numpy
+coremltools>=7.0
+onnx>=1.14.0
+pillow>=10.0.0
+
+# PyTorch - will be installed separately via pip command
+# Do not uncomment these lines
+# torch
+# torchvision
