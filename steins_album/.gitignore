@@ -43,3 +43,18 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ML Models
+model_conversion/models/*/*.pth
+model_conversion/models/*/*.tflite
+model_conversion/models/*/*.txt
+ios/Runner/CoreMLModels/*.mlmodel
+
+# Keep model directories but ignore contents
+!model_conversion/models/
+!model_conversion/models/scene/
+!model_conversion/models/selfie/
+!model_conversion/models/content/
+!ios/Runner/CoreMLModels/
+!model_conversion/models/*/.gitkeep
+!ios/Runner/CoreMLModels/.gitkeep

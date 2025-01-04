@@ -1,14 +1,16 @@
 PODS:
   - Flutter (1.0.0)
-  - Google-Maps-iOS-Utils (6.1.0):
-    - GoogleMaps (~> 9.0)
+  - Google-Maps-iOS-Utils (5.0.0):
+    - GoogleMaps (~> 8.0)
   - google_maps_flutter_ios (0.0.1):
     - Flutter
     - Google-Maps-iOS-Utils (< 7.0, >= 5.0)
     - GoogleMaps (< 10.0, >= 8.4)
-  - GoogleMaps (9.2.0):
-    - GoogleMaps/Maps (= 9.2.0)
-  - GoogleMaps/Maps (9.2.0)
+  - GoogleMaps (8.4.0):
+    - GoogleMaps/Maps (= 8.4.0)
+  - GoogleMaps/Base (8.4.0)
+  - GoogleMaps/Maps (8.4.0):
+    - GoogleMaps/Base
   - image_picker_ios (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
@@ -49,14 +51,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  Google-Maps-iOS-Utils: 0a484b05ed21d88c9f9ebbacb007956edd508a96
+  Google-Maps-iOS-Utils: 66d6de12be1ce6d3742a54661e7a79cb317a9321
   google_maps_flutter_ios: e31555a04d1986ab130f2b9f24b6cdc861acc6d3
-  GoogleMaps: 634ec3ca99698b31ca2253d64f017217d70cfb38
+  GoogleMaps: 8939898920281c649150e0af74aa291c60f2e77d
   image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
   permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
   photo_manager: ff695c7a1dd5bc379974953a2b5c0a293f7c4c8a
 
-PODFILE CHECKSUM: cd28b5ad6ae8870bba0b1aa5f9ab218e6c9ef39a
+PODFILE CHECKSUM: 35e59780aa28a83a885f5857aa61b478e2df03ab
 
 COCOAPODS: 1.12.1

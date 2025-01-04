@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart' as maps;
 import '../models/ml_inference_model.dart';
 import '../widgets/photo_grid.dart';
 import '../widgets/map_view.dart';
@@ -27,7 +27,7 @@ class _CategoryViewScreenState extends State<CategoryViewScreen> {
   bool _isReviewMode = false;
   bool _isLoading = true;
   List<AssetEntity> _photos = [];
-  final Map<String, List<Marker>> _locationMarkers = {};
+  final Map<String, List<maps.Marker>> _locationMarkers = {};
 
   @override
   void initState() {
@@ -103,10 +103,13 @@ class _CategoryViewScreenState extends State<CategoryViewScreen> {
           
           final markers = _locationMarkers[result.label] ?? [];
           markers.add(
-            Marker(
-              markerId: MarkerId(photo.id),
-              position: LatLng(location.latitude, location.longitude),
-              infoWindow: InfoWindow(title: result.label),
+            maps.Marker(
+              markerId: maps.MarkerId(photo.id),
+              position: maps.LatLng(
+                location.latitude ?? 0.0,
+                location.longitude ?? 0.0
+              ),
+              infoWindow: maps.InfoWindow(title: result.label),
             ),
           );
           _locationMarkers[result.label] = markers;
@@ -118,7 +121,7 @@ class _CategoryViewScreenState extends State<CategoryViewScreen> {
 
   Future<void> _deletePhoto(AssetEntity photo) async {
     final result = await PhotoManager.editor.deleteWithIds([photo.id]);
-    if (result && mounted) {
+    if (result.isNotEmpty && mounted) {
       setState(() {
         _photos.remove(photo);
       });

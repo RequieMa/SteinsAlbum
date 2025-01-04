@@ -38,11 +38,6 @@ class _AlbumStatsState extends State<AlbumStats> {
       final photos = await album.getAssetListRange(
         start: 0,
         end: count,
-        filterOption: FilterOptionGroup(
-          imageOption: const FilterOption(
-            sizeConstraint: SizeConstraint(ignoreSize: true),
-          ),
-        ),
       );
 
       for (final photo in photos) {

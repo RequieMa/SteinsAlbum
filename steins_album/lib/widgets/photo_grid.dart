@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:photo_manager_image_provider/photo_manager_image_provider.dart';
 import '../screens/similar_photos_screen.dart';
 
 class PhotoGrid extends StatefulWidget {
@@ -172,10 +173,12 @@ class _PhotoTile extends StatelessWidget {
             ),
           ],
         ),
-        child: AssetEntityImage(
-          photo,
-          isOriginal: false,
-          thumbnailSize: const ThumbnailSize.square(300),
+        child: Image(
+          image: AssetEntityImageProvider(
+            photo,
+            isOriginal: false,
+            thumbnailSize: const ThumbnailSize.square(300),
+          ),
           fit: BoxFit.cover,
         ),
       ),
@@ -185,10 +188,12 @@ class _PhotoTile extends StatelessWidget {
           children: [
             Hero(
               tag: photo.id,
-              child: AssetEntityImage(
-                photo,
-                isOriginal: false,
-                thumbnailSize: const ThumbnailSize.square(300),
+              child: Image(
+                image: AssetEntityImageProvider(
+                  photo,
+                  isOriginal: false,
+                  thumbnailSize: const ThumbnailSize.square(300),
+                ),
                 fit: BoxFit.cover,
               ),
             ),
@@ -263,9 +268,11 @@ class _ReviewCard extends StatelessWidget {
       child: Center(
         child: Hero(
           tag: photo.id,
-          child: AssetEntityImage(
-            photo,
-            isOriginal: true,
+          child: Image(
+            image: AssetEntityImageProvider(
+              photo,
+              isOriginal: true,
+            ),
             fit: BoxFit.contain,
           ),
         ),
